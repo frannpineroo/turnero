@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Turnos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Gestor de Turnos</h1>
+            <p>Organiza tus citas y reuniones</p>
+        </header>
+
+        <div class="main-grid">
+            <div class="card">
+                <h2 style="margin-bottom: 20px; color: #333;">Nuevo Turno</h2>
+                <form id="turnoForm">
+                    <div class="form-group">
+                        <label for="tarea">Tarea / Asunto *</label>
+                        <input type="text" id="tarea" required placeholder="Ej: Reunión con cliente">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fecha">Fecha *</label>
+                            <input type="date" id="fecha" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hora">Hora *</label>
+                            <input type="time" id="hora" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="persona">Con quién</label>
+                            <input type="text" id="persona" placeholder="Nombre de la persona">
+                        </div>
+                        <div class="form-group">
+                            <label for="prioridad">Prioridad *</label>
+                            <select id="prioridad" required>
+                                <option value="baja">🟢 Baja</option>
+                                <option value="media" selected>🟡 Media</option>
+                                <option value="alta">🔴 Alta</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descripcion">Descripción / Notas</label>
+                        <textarea id="descripcion" placeholder="Detalles adicionales sobre el turno..."></textarea>
+                    </div>
+
+                    <button type="submit">➕ Agregar Turno</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h2 style="margin-bottom: 20px; color: #333;">📅 Calendario</h2>
+                <div class="calendario-header">
+                    <div class="mes-actual" id="mesActual"></div>
+                    <div class="calendario-nav">
+                        <button class="btn-nav" id="btnMesAnterior">◀</button>
+                        <button class="btn-nav" id="btnHoy">Hoy</button>
+                        <button class="btn-nav" id="btnMesSiguiente">▶</button>
+                    </div>
+                </div>
+                <div class="calendario-grid" id="calendarioGrid"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 style="margin-bottom: 20px; color: #333;">Mis Turnos</h2>
+            <div class="turnos-del-dia-titulo" id="turnosDelDiaTitulo"></div>
+            <div id="turnosList" class="turnos-list"></div>
+        </div>
+    </div>
+
+    <script src="turnos.js"></script>
+</body>
+</html>

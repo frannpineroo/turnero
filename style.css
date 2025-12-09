@@ -1,0 +1,353 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Calendario */
+        .calendario-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .calendario-nav {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-nav {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            width: auto;
+        }
+
+        .btn-nav:hover {
+            background: #5568d3;
+        }
+
+        .mes-actual {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .calendario-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+        }
+
+        .dia-semana {
+            text-align: center;
+            font-weight: 600;
+            color: #666;
+            padding: 10px 5px;
+            font-size: 14px;
+        }
+
+        .dia-calendario {
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: #f8f9fa;
+            position: relative;
+            padding: 5px;
+        }
+
+        .dia-calendario:hover {
+            background: #e9ecef;
+            transform: scale(1.05);
+        }
+
+        .dia-calendario.otro-mes {
+            opacity: 0.3;
+        }
+
+        .dia-calendario.hoy {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+
+        .dia-calendario.seleccionado {
+            background: #764ba2;
+            color: white;
+            font-weight: 600;
+        }
+
+        .dia-calendario.con-turnos {
+            border: 2px solid #667eea;
+        }
+
+        .dia-numero {
+            font-size: 16px;
+        }
+
+        .turnos-count {
+            font-size: 10px;
+            background: #e74c3c;
+            color: white;
+            border-radius: 10px;
+            padding: 2px 6px;
+            margin-top: 2px;
+        }
+
+        .turnos-list {
+            display: grid;
+            gap: 15px;
+        }
+
+        .turno-item {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .turno-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .turno-item.alta {
+            border-left-color: #e74c3c;
+        }
+
+        .turno-item.media {
+            border-left-color: #f39c12;
+        }
+
+        .turno-item.baja {
+            border-left-color: #27ae60;
+        }
+
+        .turno-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 12px;
+        }
+
+        .turno-titulo {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .turno-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .info-label {
+            font-weight: 600;
+        }
+
+        .turno-descripcion {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .prioridad-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .prioridad-alta {
+            background: #ffebee;
+            color: #e74c3c;
+        }
+
+        .prioridad-media {
+            background: #fff3e0;
+            color: #f39c12;
+        }
+
+        .prioridad-baja {
+            background: #e8f5e9;
+            color: #27ae60;
+        }
+
+        .btn-eliminar {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.2s;
+            width: auto;
+        }
+
+        .btn-eliminar:hover {
+            background: #c0392b;
+            transform: none;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+        }
+
+        .empty-state svg {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+
+        .turnos-del-dia-titulo {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 18px;
+        }
+
+        @media (max-width: 1024px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .dia-numero {
+                font-size: 14px;
+            }
+
+            .dia-semana {
+                font-size: 12px;
+                padding: 8px 2px;
+            }
+        }
