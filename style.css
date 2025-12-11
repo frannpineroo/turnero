@@ -50,14 +50,14 @@ h1 {
 
 label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     color: #b0b0b0;
     font-weight: 500;
 }
 
 input, select, textarea {
     width: 100%;
-    padding: 12px;
+    padding: 8px;
     border: 2px solid #2a2a2a;
     border-radius: 8px;
     font-size: 14px;
@@ -351,10 +351,6 @@ h2 {
     color: #e0e0e0;
 }
 
-/* ----------------------------- */
-/* RESPONSIVE FIX PARA CELULARES */
-/* ----------------------------- */
-
 @media (max-width: 1024px) {
     .main-grid {
         grid-template-columns: 1fr;
@@ -371,16 +367,15 @@ h2 {
     }
 
     .dia-numero {
-        font-size: 14px;
+        font-size: 10px;
     }
 
     .dia-semana {
-        font-size: 12px;
+        font-size: 8px;
         padding: 8px 2px;
     }
 }
 
-/* 📌 FIX PRINCIPAL — EVITA QUE EL CALENDARIO SE ROMPA EN CELULARES */
 @media (max-width: 480px) {
 
     .card {
@@ -392,8 +387,8 @@ h2 {
     }
 
     .dia-calendario {
-        aspect-ratio: unset !important;   /* ← evita deformación */
-        min-height: 42px;                 /* altura mínima */
+        aspect-ratio: unset !important;  
+        min-height: 42px;     
         padding: 4px;
     }
 
