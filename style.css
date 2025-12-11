@@ -210,6 +210,7 @@ button:hover {
     margin-top: 2px;
 }
 
+/* Lista turnos */
 .turnos-list {
     display: grid;
     gap: 15px;
@@ -350,6 +351,10 @@ h2 {
     color: #e0e0e0;
 }
 
+/* ----------------------------- */
+/* RESPONSIVE FIX PARA CELULARES */
+/* ----------------------------- */
+
 @media (max-width: 1024px) {
     .main-grid {
         grid-template-columns: 1fr;
@@ -372,5 +377,32 @@ h2 {
     .dia-semana {
         font-size: 12px;
         padding: 8px 2px;
+    }
+}
+
+/* 📌 FIX PRINCIPAL — EVITA QUE EL CALENDARIO SE ROMPA EN CELULARES */
+@media (max-width: 480px) {
+
+    .card {
+        padding: 15px;
+    }
+
+    .calendario-grid {
+        gap: 4px;
+    }
+
+    .dia-calendario {
+        aspect-ratio: unset !important;   /* ← evita deformación */
+        min-height: 42px;                 /* altura mínima */
+        padding: 4px;
+    }
+
+    .dia-numero {
+        font-size: 13px;
+    }
+
+    .turnos-count {
+        font-size: 9px;
+        padding: 1px 5px;
     }
 }
