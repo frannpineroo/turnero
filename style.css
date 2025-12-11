@@ -50,14 +50,14 @@ h1 {
 
 label {
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     color: #b0b0b0;
     font-weight: 500;
 }
 
 input, select, textarea {
     width: 100%;
-    padding: 8px;
+    padding: 12px;
     border: 2px solid #2a2a2a;
     border-radius: 8px;
     font-size: 14px;
@@ -367,11 +367,11 @@ h2 {
     }
 
     .dia-numero {
-        font-size: 10px;
+        font-size: 14px;
     }
 
     .dia-semana {
-        font-size: 8px;
+        font-size: 12px;
         padding: 8px 2px;
     }
 }
