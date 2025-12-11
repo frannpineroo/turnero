@@ -400,4 +400,23 @@ h2 {
         font-size: 9px;
         padding: 1px 5px;
     }
+
+    /* Fix para que inputs no se salgan en móviles (iOS Safari principalmente) */
+    input, select, textarea {
+    max-width: 100%;
+    width: 100%;
+    }
+
+    /* Fix especial para inputs de fecha y hora */
+    input[type="date"],
+    input[type="time"] {
+        font-size: 16px;          /* evita zoom automático de Safari */
+        -webkit-appearance: none; /* evita estilos nativos gigantes */
+        padding: 12px;           
+    }
+
+    /* Asegurar que labels y campos nunca rompan el card */
+    .form-group {
+        overflow: hidden;
+    }
 }
